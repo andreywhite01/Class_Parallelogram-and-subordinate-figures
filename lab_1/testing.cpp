@@ -8,7 +8,8 @@
 
 
 void Test() {
-	cerr << "Тестирование класса Rectangle\n";
+	pair<int, int> info;
+//	cerr << "Тестирование класса Rectangle\n";
 	{
 		Rectangle r(4, 2, 2., 1.);
 		Assert(r.GetParams(), vector<float>{ 4, 2, 2, 1, 90 }, "1");
@@ -75,7 +76,7 @@ void Test() {
 		Rectangle r(14, 3, -2, 3);
 		Assert(r.GetPerimetr(), 34, "40");
 	}
-	cerr << "Тестирование класса Parallelogramm\n";
+//	cerr << "Тестирование класса Parallelogramm\n";
 	{
 		Parallelogramm r(7, (float)sqrt(20), 1.5, 3, (float)(atan(2) / PI * 180.));
 		Assert(r.GetParams(), vector<float>{ 7, (float)(round(sqrt(20) * 1000) / 1000.), 1.5, 3, (float)(round(atan(2) / PI * 180. * 1000) / 1000.) }, "41");
@@ -111,7 +112,7 @@ void Test() {
 		Assert(r.IsCrossesAbscissa(), false, "61");
 		Assert(r.IsCrossesOrdinate(), true, "62");
 	}
-	cerr << "Тестирование класса Square\n";
+//	cerr << "Тестирование класса Square\n";
 	{
 		Square r(3, 0.5, 3.5);
 		Assert(r.GetParams(), vector<float>{ 3, 3, 0.5, 3.5, 90 }, "63");
@@ -147,7 +148,7 @@ void Test() {
 		Assert(r.IsCrossesAbscissa(), false, "85");
 		Assert(r.IsCrossesOrdinate(), true, "86");
 	}
-	cerr << "Тестирование класса Rhomb\n";
+//	cerr << "Тестирование класса Rhomb\n";
 	{
 		Rhomb r(4, 3, (float)sqrt(3), 60);
 		Assert(r.GetParams(), vector<float>{ 4, 4, 3, (float)(round(sqrt(3) * 1000) / 1000.), 60 }, "87");
@@ -209,7 +210,7 @@ void Test() {
 		Assert(r.IsCrossesAbscissa(), true, "125");
 		Assert(r.IsCrossesOrdinate(), true, "126");
 	}
-	cerr << "Тестирование Метода Rotate\n";
+//	cerr << "Тестирование Метода Rotate\n";
 	{
 		Rectangle r(6, 2, 2, -2);
 		r.Rotate(90);
@@ -228,4 +229,5 @@ void Test() {
 		Assert(r.IsBoarder({ 4,-1 }), true, "137");
 		Assert(r.IsBoarder({ 1,0 }), false, "138");
 	}
+	cout << "Тестирование завершилось.\nЕсли выше не перечислены ошибки, то тестирование завершилось успешно\n";
 }
